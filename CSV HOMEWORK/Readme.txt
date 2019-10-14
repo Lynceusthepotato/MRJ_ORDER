@@ -1,6 +1,5 @@
 READ ME 
-I can’t do the exercise I’m sorry, my brain can’t handle this.
-
+Im sorry if there is anything wrong in this file 
 series, histogram, formatting dates and computing ranges, mean, median, etc):
 1.pygal
 2.matplotlib
