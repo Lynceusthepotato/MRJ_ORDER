@@ -23,12 +23,6 @@ with open(filename) as f:
 
             dictInterval.setdefault(interval,[])
             dictInterval[interval].append(int(steps))
-            if date2 % 7 == 0:
-                dictIntervalWeekEnds.setdefault(interval,[]) # D is with this stuff
-                dictIntervalWeekEnds[interval].append(int(steps))
-            else:
-                dictIntervalWeekDays.setdefault(interval,[])
-                dictIntervalWeekDays[interval].append(int(steps))
 something = []
 meaninterval = []
 for i in dictInterval.keys():
