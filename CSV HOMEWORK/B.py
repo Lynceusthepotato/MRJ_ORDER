@@ -13,7 +13,6 @@ with open(filename) as f:
         steps = row[0]
         if steps != "NA":
             date = row[1]
-            stepss.append(steps)
             date2 = int(datetime.strptime(date,"%Y-%m-%d").day)
             interval = int(row[2])
 
@@ -23,7 +22,7 @@ with open(filename) as f:
             dictInterval.setdefault(interval,[])
             dictInterval[interval].append(int(steps))
 
-meaninterval = [] 
+meaninterval = []
 for i in dictInterval.keys():
     meaninterval.append(statistics.mean(dictInterval.get(i)))
 plt.plot(meaninterval)
