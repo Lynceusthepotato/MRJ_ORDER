@@ -5,6 +5,8 @@ import csv
 
 dicts = {}
 dictInterval = {}
+dictIntervalWeekDays = {}
+dictIntervalWeekEnds = {}
 filename = "activity.csv"
 with open(filename) as f:
     reader = csv.reader(f)
@@ -21,11 +23,19 @@ with open(filename) as f:
 
             dictInterval.setdefault(interval,[])
             dictInterval[interval].append(int(steps))
-
+            if date2 % 7 == 0:
+                dictIntervalWeekEnds.setdefault(interval,[]) # D is with this stuff
+                dictIntervalWeekEnds[interval].append(int(steps))
+            else:
+                dictIntervalWeekDays.setdefault(interval,[])
+                dictIntervalWeekDays[interval].append(int(steps))
+something = []
 meaninterval = []
 for i in dictInterval.keys():
     meaninterval.append(statistics.mean(dictInterval.get(i)))
-plt.plot(meaninterval)
+    something.append(i)
+
+plt.plot(something,meaninterval)
 plt.title("Histogram")
 plt.xlabel("5 min interval")
 plt.ylabel("average all day")
