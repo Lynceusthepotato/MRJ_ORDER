@@ -23,8 +23,8 @@ with open(filename) as f:
             dictInterval.setdefault(interval,[])
             dictInterval[interval].append(int(steps))
 
-meaninterval = [] #THIS IS THE ANSWER
-for i in dictInterval.keys(): # THIS IS THE ANSWER
+meaninterval = [] 
+for i in dictInterval.keys():
     meaninterval.append(statistics.mean(dictInterval.get(i)))
 plt.plot(meaninterval)
 plt.title("Histogram")
