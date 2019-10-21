@@ -17,7 +17,7 @@ while True:
     try:
         choice = menu()
         if choice == 1:
-            BK("BNI").addCostumer(FName=input(""), LName=input(""))  # This doesn't work
+            BK("BNI").addCostumer(FName=input("Enter first name: "), LName=input("Enter last name: "))
         elif choice == 2:
             AC.deposit(int(input("How much money do you want to put into the bank account: ")))
             print("Your balance now are", AC.getBalance())
@@ -25,7 +25,7 @@ while True:
             AC.withdraw(int(input("How much money do you want to take?")))
             print("Your balance now are", AC.getBalance())
         elif choice == 4:
-            print(BK("BNI").getNumOfCustomer())  # So this doesnt work
+            print(BK("BNI").getNumOfCustomer(0))
         elif choice == 5:
             break
     except ValueError:
