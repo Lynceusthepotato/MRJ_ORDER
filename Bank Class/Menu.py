@@ -25,6 +25,8 @@ while True:
             AC.withdraw(int(input("How much money do you want to take?")))
             print("Your balance now are", AC.getBalance())
         elif choice == 4:
+            with open("Customer.txt") as pop:
+                print(pop.read().splitlines())
             print(BK("BNI").getNumOfCustomer(0))
         elif choice == 5:
             break
