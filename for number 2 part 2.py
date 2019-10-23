@@ -24,10 +24,19 @@ class deleteStaff:
             self.__filename = f.read().splitlines()
 
     def delData(self, id):
-        self.__filename.remove(f'{id}')
-        with open("read file data.txt", "w") as fp:
-            for i in self.__filename:
-                fp.write(i + "\n")
+        id = id
+        remove_line = 0
+        fp = open("read file data.txt", "r+")
+        lines = fp.readlines()
+        fp.seek(0)
+        for line in lines:
+            if not line.startswith(str(id)):
+                fp.write(line)
+            else:
+                print("Data has been successfully deleted")
+                remove_line += 1
+        fp.truncate()
+        fp.close()
 
 
 filename = open("read file data.txt").readlines()
@@ -53,9 +62,9 @@ while True:
                 elif id[0] != "S":
                     print("You need to use S in the start")
                     break
-                #elif id == filename: :c
-                    #print("You can't input the same id")
-                    #break
+                # elif id == filename: :c
+                # print("You can't input the same id")
+                # break
                 else:
                     pass
                 name = input("Enter Name: ").capitalize()
@@ -86,7 +95,18 @@ while True:
                             salary=salary)
                 break
         elif choice == 2:
-            B().delData(id=input(""))
+            while True:
+                id = input("Enter id[SXXXX]: ").capitalize()
+                if len(id) != 5:
+                    print("Invalid input")
+                    break
+                elif id[0] != "S":
+                    print("You need to use S in the start")
+                    break
+                else:
+                    pass
+                B().delData(id=id)
+                break
         elif choice == 3:
             pass
         elif choice == 4:
