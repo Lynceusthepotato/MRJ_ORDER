@@ -39,9 +39,25 @@ class deleteStaff:
         fp.close()
 
 
+class viewData:
+    def __init__(self):
+        with open("read file data.txt", "r") as f:
+            self.__filename = f.read().splitlines()
+
+    def view(self):
+        with open("read file data.txt") as fp:
+            next(fp)
+            for line in fp:
+                # position = line[2] it doesnt work
+                # salary = line[3]
+                # print(position,salary)
+                print(line)
+
+
 filename = open("read file data.txt").readlines()
 A = newStaff
 B = deleteStaff
+C = viewData
 
 
 def menu():
@@ -108,7 +124,7 @@ while True:
                 B().delData(id=id)
                 break
         elif choice == 3:
-            pass
+            C().view()
         elif choice == 4:
             break
     except ValueError:
