@@ -39,6 +39,6 @@ public class policeCar implements LandVehicle, IsEmergency {
 
     public String toString() {
         return "Police have " + maxPassenger + "max passengers, with speed of " + maxSpeed +
-                "oh and have " + wheels + "wheels, and its name is " + name;
+                "oh and have " + wheels + "wheels, and the name is " + name;
     }
 }
