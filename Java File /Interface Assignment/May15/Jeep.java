@@ -32,6 +32,10 @@ public class Jeep implements LandVehicle {
         maxSpeed = Speed;
     }
 
+    public void soundHorn() {
+        System.out.println("AAAAAHHHHHH");
+    }
+
     public String toString() {
        return "Jeep have " + wheels + " Wheels, with maximum of " +
                maxPassenger + " passengers, and with the maximum speed of " + maxSpeed + ". I named it " + name;

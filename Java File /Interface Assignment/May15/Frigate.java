@@ -31,6 +31,10 @@ public class Frigate implements SeaVessel{
     public void setMaxSpeed(double Speed) {
         maxSpeed = Speed;
     }
+
+    public void fireGun(){
+        System.out.println("aim set BOOM");
+    }
     public String toString(){
         return "Ok no more, name " + name + " displacement = " + Displacement + " Passengers = " + maxPassenger + " Speed = " + maxSpeed;
     }

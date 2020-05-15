@@ -23,6 +23,7 @@ public class Main {
         a2.setMaxPassengers(4);
         a2.setMaxSpeed(666);
         a2.setNumWheels(4);
+        a2.soundHorn();
         System.out.println(a2.toString());
 
         Jeep.add(a1);
@@ -38,5 +39,7 @@ public class Main {
 
         PoliceCar.add(b1);
 
+        Frigate c1 = new Frigate();
+        c1.fireGun();
     }
 }
