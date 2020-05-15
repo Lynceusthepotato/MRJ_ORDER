@@ -28,5 +28,15 @@ public class Main {
         Jeep.add(a1);
         Jeep.add(a2);
 
+        policeCar b1 = new policeCar();
+        b1. setName("Bumbum");
+        b1.setMaxPassengers(4);
+        b1.setMaxSpeed(420);
+        b1.setNumWheels(4);
+        b1.madcops();
+        System.out.println(b1.toString());
+
+        PoliceCar.add(b1);
+
     }
 }

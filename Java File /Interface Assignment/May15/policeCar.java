@@ -37,8 +37,13 @@ public class policeCar implements LandVehicle, IsEmergency {
         maxSpeed = Speed;
     }
 
+    public void madcops() {
+        soundSiren();
+        System.out.println("*open doors* COME BACK HERE ");
+    }
+
     public String toString() {
-        return "Police have " + maxPassenger + "max passengers, with speed of " + maxSpeed +
-                "oh and have " + wheels + "wheels, and the name is " + name;
+        return "Police have " + maxPassenger + " max passengers, with speed of " + maxSpeed +
+                "oh and have " + wheels + " wheels, and the name is " + name;
     }
 }
