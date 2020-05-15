@@ -41,5 +41,10 @@ public class Main {
 
         Frigate c1 = new Frigate();
         c1.fireGun();
+
+        hoverCraft d1 = new hoverCraft();
+        d1.EnterLand();
+        d1.EnterSea();
+
     }
 }

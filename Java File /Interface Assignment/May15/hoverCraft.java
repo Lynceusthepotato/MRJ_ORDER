@@ -43,6 +43,16 @@ public class hoverCraft implements LandVehicle, SeaVessel {
         maxSpeed = Speed;
     }
 
+    public void EnterLand(){
+        drive();
+        System.out.println(":D");
+    }
+
+    public void EnterSea(){
+        launch();
+        System.out.println("D:");
+    }
+
     public String toString(){
         return "Hovercraft stats (name = " + name + "\nmax passengers = " + maxPassenger +
                 "\nmax speed = " + maxSpeed + "\nwheels = " + wheels + "\ndisplacement = " + Displacement;
