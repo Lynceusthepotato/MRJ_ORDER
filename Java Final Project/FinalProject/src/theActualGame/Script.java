@@ -74,8 +74,7 @@ public class Script {
     String battle_Location = "";
     int counter, randomstuff, enemyEncounter, damageDone, damageShield, damageAfterCalculate, cost, reward;
     int itemSlot, battleCount = 0;
-    boolean table, forest, town, equipItem, shop, sellingItem, removeItem, buyItem, playingMaze, talkToCreep, buyFoodandDrink = false;
-    boolean afterBattle = true;
+    boolean table, forest, town, equipItem, shop, sellingItem, removeItem, buyItem, playingMaze, talkToCreep, buyFoodandDrink, afterBattle = false;
     Weapon tempWeapon;
     Armor tempArmor;
     Item tempItem;
@@ -411,7 +410,7 @@ public class Script {
     public void enteringNameForPlayer() {
         if (player.getName().equals("Kazuma")){
             text = "Huh so your name is " + player.getName() + ", pretty sure you are a weeb \nbut since you know the reference, \nhere I give you some gold!";
-            player.plusGold(500);
+            player.plusGold(50);
             sc.money_Number_Label.setText("" + player.getGold());
         } else {
             text = "Huh so your name is " + player.getName() + ", hmm I th- nvm, ok now you are going to be teleported to your new home";
@@ -495,6 +494,7 @@ public class Script {
             text = "Oh there is some stuff on the table lemme pick it up!";
             playerInventory[0] = lesserPotion;
             playerInventory[1] = woodSword;
+
             table = true;
         } else {
             text = "You already took what`s on the table you nut";
@@ -990,6 +990,7 @@ public class Script {
                         sc.choice_1.setText("YES!!");
                         game.select_Position_1 = "Arena";
                         battleCount = 0;
+                        afterBattle = true;
                     }
                     onlyOneChoice();
                     textReader();
